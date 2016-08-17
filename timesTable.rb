@@ -1,6 +1,9 @@
 class TimesTable
-  def something
-    puts ARGV[0]
+  attr_accessor :size, :prime_arr
+
+  def initialize(size)
+    @size = size
+    @prime_arr = prime_array(size)
   end
 
   def is_prime?(target_number)
