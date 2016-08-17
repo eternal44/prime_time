@@ -30,8 +30,34 @@ class TimesTable
 
     result_arr
   end
+
+  def build_product_matrix(table_size)
+    primes_arr = prime_array(@size)
+    result_matrix = [[0] + primes_arr]
+
+    (0..primes_arr.count - 1).each do |col_index|
+      result_matrix[col_index + 1] = [primes_arr[col_index]]
+      (0..primes_arr.count - 1).each do |row_index|
+        product = primes_arr[row_index] * primes_arr[col_index]
+        result_matrix[col_index + 1].push(product)
+      end
+    end
+
+    result_matrix
+  end
+
+  def print_table(prime_arr)
+    0..prime_arr.count do |y_pointer|
+      print_str = ''
+      0..prime_arr.count do |x_pointer|
+        print_str += ' ' + prime_arr[y_pointer][x_pointer].to_s
+      end
+      puts print_str
+    end
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
-  puts TimesTable.new.something
+  my_table = TimesTable.new(ARGV[0].to_i)
+  my_table.print_table(my_table.prime_arr)
 end
