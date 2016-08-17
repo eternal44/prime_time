@@ -24,7 +24,7 @@ describe TimesTable do
     end
 
     it 'should create an array of prime numbers' do
-      @table.build_product_matrix(3).must_equal [
+      @table.build_product_matrix().must_equal [
         [0,2,3,5],
         [2,4,6,10],
         [3,6,9,15],
