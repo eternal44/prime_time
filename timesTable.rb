@@ -1,9 +1,8 @@
 class TimesTable
-  attr_accessor :size, :prime_arr
+  attr_accessor :size
 
   def initialize(size)
     @size = size
-    @prime_arr = prime_array(size)
   end
 
   def is_prime?(target_number)

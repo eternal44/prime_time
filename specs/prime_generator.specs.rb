@@ -8,7 +8,6 @@ describe TimesTable do
 
   describe 'create prime table' do
     it 'should initialize with correct properties' do
-      @table.prime_arr.must_equal [2,3,5]
       @table.size.must_equal 3
     end
 
