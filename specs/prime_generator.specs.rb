@@ -3,10 +3,15 @@ require_relative '../timesTable.rb'
 
 describe TimesTable do
   before do
-    @table = TimesTable.new
+    @table = TimesTable.new(5)
   end
 
   describe 'create prime table' do
+    it 'should initialize with correct properties' do
+      @table.prime_arr.must_equal [2,3,5,7,11]
+      @table.size.must_equal 5
+    end
+
     it 'should check if a number is prime' do
       @table.is_prime?(4).must_equal false
       @table.is_prime?(5).must_equal true
