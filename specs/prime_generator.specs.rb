@@ -6,10 +6,12 @@ describe TimesTable do
     @table = TimesTable.new
   end
 
-  describe '#isPrime' do
+  describe 'create prime table' do
     it 'should check if a number is prime' do
-      @table.isPrime(4).must_equal false
-      @table.isPrime(5).must_equal true
+      @table.is_prime?(4).must_equal false
+      @table.is_prime?(5).must_equal true
+      @table.is_prime?(11).must_equal true
+      @table.is_prime?(125).must_equal false
     end
 
     it 'should generate an array of primes' do
